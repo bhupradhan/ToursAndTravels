@@ -1,0 +1,34 @@
+<html>
+<head>ADMIN</head>
+<title>ADMIN</title>
+<body>
+  <p>Domestic</p>
+  <p>{{msg}}</p>
+<form action="admin" method="post" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+    <div class="form-group">
+      <label for="img">img:</label>
+      {{form.img(class="form-control form-control-lg")}}
+    </div>
+    <div class="form-group">
+      <label for="name">name:</label>
+      {{form.name(class="form-control form-control-lg")}}
+    </div>
+    <div class="form-group">
+      <label for="description">description:</label>
+      {{form.description(class="form-control form-control-lg")}}
+    </div>
+    <div class="form-group">
+      <label for="cost">cost:</label>
+      {{form.cost(class="form-control form-control-lg")}}
+    </div>
+    
+    <label for="button">Click to submit:</label>
+    <button type="submit" id="button" class="btn btn-success btn-block">Submit</button>
+    </form>
+
+ 
+  
+</html>
+</body>
+

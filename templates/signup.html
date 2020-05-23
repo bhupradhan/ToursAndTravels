@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sign Up-Bhramanti tours</title>
+         <link rel="stylesheet" href="{{url_for('static',filename='assets\css\bootstrap.min.css')}}">
+    </head>
+        <link rel="stylesheet" href="{{url_for('static',filename='assets\css\Login-Form-Dark.css')}}">
+    </head>
+    <body>
+        <div class="text-capitalize login-dark">
+        <marquee behavior="scroll" scrollamount="7" height="20" direction="right">bhramanti tours</marquee>
+
+
+        <div class="container">
+        
+
+         {% if flag %}
+         <p><strong>{{ flag }}</strong>
+
+
+      {% endif %}
+
+        <form action="signup" method="post">
+          {{ form.hidden_tag() }}
+
+    <div class="form-group">
+    <label for="fname">First name:</label>
+    {{form.fname(class="form-control form-control-lg",type="text")}}
+    </div>
+
+    <div class="form-group">
+    <label for="lname">Last name:</label>
+    {{form.lname(class="form-control form-control-lg",type="text")}}
+    </div>
+
+
+
+
+    <div class="form-group">
+    <label for="email">Email:</label>
+    {{form.email(class="form-control form-control-lg",type="email")}}
+    </div>
+
+    <div class="form-group">
+    <label for="password">Password:</label>
+    {{form.password(class="form-control form-control-lg",type="password")}}
+    </div>
+
+    <div class="form-group">
+    <label for="cpassword">Confirm Password:</label>
+    {{form.cpassword(class="form-control form-control-lg",type="password")}}
+    </div>
+
+    <div class="form-group">
+    <label for="gender">Gender:</label>
+    {{form.gender(class="form-control form-control-lg",type="text")}}
+    </div>
+
+    <div class="form-group">
+    <label for="dob">date of birth:</label>
+    {{form.dob(class="form-control form-control-lg",type="date")}}
+    </div>
+
+    <div class="form-group">
+    <label for="mob">mobile number:</label>
+    {{form.mob(class="form-control form-control-lg",type="text")}}
+    </div>
+
+
+
+
+    <button type="submit" id="button" class="btn btn-success btn-block">Submit</button>
+
+
+  </form>
+
+</div>
+</div>
+</div>
+    </body>
+</html>

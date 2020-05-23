@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>login1</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Features-Boxed.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Footer-Basic.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Login-Form-Dark.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Navigation-with-Button.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Newsletter-Subscription-Form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Registration-Form-with-Photo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/styles.css')}}">
+</head>
+
+<body>
+    <div class="text-capitalize login-dark">
+        <h1 class="display-4 text-center text-white">Welcome to bhramanti tours</h1>
+        <form data-bs-hover-animate="flash" method="post" action=" ">
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Enter Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Enter Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+            {% if error %}
+            {{ error }}
+            <br><a class="signup" href="signup">Not a member? SIGN UP</a></form>
+            {% endif %}
+            <br>{{msg}}</br>
+    </div>
+    <script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/bs-init.js')}}"></script>
+</body>
+
+</html>

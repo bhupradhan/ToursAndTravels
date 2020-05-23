@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Confirm Booking</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Features-Boxed.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Footer-Basic.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Login-Form-Dark.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Navigation-with-Button.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Newsletter-Subscription-Form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Registration-Form-with-Photo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/styles.css')}}">
+</head>
+
+<body>
+    <div class="bg-dark border rounded border-warning shadow-lg register-photo">
+        <div class="form-container">
+            <div class="image-holder" style="background-image: url(&quot;{{url_for('static',filename='assets/img/images.jpg')}}&quot;);"></div>
+            <form class="bg-dark border rounded" method="post">
+                <h2 class="text-center text-light border-light">Book Now&nbsp;</h2>
+                <h2>{{msg}}</h2>
+                <div class="form-group"> {{form.fname(class="form-control form-control-lg",type="text", placeholder="Full Name")}}</div>
+                <div class="form-group"> {{form.curcity(class="form-control form-control-lg",type="text", placeholder="Current city")}}</div>
+                <div class="form-group"> {{form.noadult(class="form-control form-control-lg",type="number", placeholder="No of Adults")}}</div>
+                <div class="form-group"> {{form.email(class="form-control form-control-lg",type="email", placeholder="Email")}}</div>
+                <div class="form-group"> {{form.mobnum(class="form-control form-control-lg",type="text", placeholder="Mobile No.")}}</div>
+                <div class="form-group"> {{form.dot(class="form-control form-control-lg",type="date", placeholder="date of travel")}}</div>
+                <div class="form-group"> {{form.more(class="form-control form-control-lg",type="text", placeholder="give us more details")}}</div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Confirm booking</button></div>
+            </form>
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/bs-init.js')}}"></script>
+</body>
+
+</html>

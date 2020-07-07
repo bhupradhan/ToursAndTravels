@@ -1,11 +1,13 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Sign Up-Bhramanti tours</title>
-         <link rel="stylesheet" href="{{url_for('static',filename='assets\css\bootstrap.min.css')}}">
-    </head>
-        <link rel="stylesheet" href="{{url_for('static',filename='assets\css\Login-Form-Dark.css')}}">
+         <link rel="stylesheet" href="{% static 'assets\css\bootstrap.min.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'assets\css\Login-Form-Dark.css' %}">
     </head>
     <body>
         <div class="text-capitalize login-dark">
@@ -15,65 +17,60 @@
         <div class="container">
         
 
-         {% if flag %}
-         <p><strong>{{ flag }}</strong>
+        
+
+          <form action="signup" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="first_name">First name:</label>
+            <input type="text" name="first_name" placeholder="First Name"><br>
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last name:</label>
+            <input type="text" name="last_name" placeholder="Last Name"><br>
+            </div>
+            <div class="form-group">
+              <label for="email">Email ID:</label>
+            <input type="email" name="email" placeholder="email"><br>
+            </div>
+            <div class="form-group">
+              <label for="password1">password:</label>
+              
+            <input type="password" name="password1" placeholder="Password"><br>
+            </div>
+            <div class="form-group">
+              <label for="password2">confirm password:</label>
+            <input type="password" name="password2" placeholder="Confirm Password"><br>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+            <input type="text" name="gender" placeholder="Gender"><br>
+            </div>
+
+            <div class="form-group">
+              <label for="dob">Date Of Birth:</label>
+            <input type="datetime" name="dob" placeholder="Date Of Birth"><br>
+            </div>
+
+            <div class="form-group">
+              <label for="mob">Mobile No.</label>
+            <input type="number" name="mob" placeholder="Mobile No."><br>
+            </div>
+            
+            <button type="submit" id="button" class="btn btn-success btn-block">Submit</button>
+              
+        </form>
+        <div>
+          {% for message in messages %}
+          <h3> {{message}}  </h3>
+          {% endfor %}
+      </div>
 
 
-      {% endif %}
-
-        <form action="signup" method="post">
-          {{ form.hidden_tag() }}
-
-    <div class="form-group">
-    <label for="fname">First name:</label>
-    {{form.fname(class="form-control form-control-lg",type="text")}}
-    </div>
-
-    <div class="form-group">
-    <label for="lname">Last name:</label>
-    {{form.lname(class="form-control form-control-lg",type="text")}}
-    </div>
+    
 
 
-
-
-    <div class="form-group">
-    <label for="email">Email:</label>
-    {{form.email(class="form-control form-control-lg",type="email")}}
-    </div>
-
-    <div class="form-group">
-    <label for="password">Password:</label>
-    {{form.password(class="form-control form-control-lg",type="password")}}
-    </div>
-
-    <div class="form-group">
-    <label for="cpassword">Confirm Password:</label>
-    {{form.cpassword(class="form-control form-control-lg",type="password")}}
-    </div>
-
-    <div class="form-group">
-    <label for="gender">Gender:</label>
-    {{form.gender(class="form-control form-control-lg",type="text")}}
-    </div>
-
-    <div class="form-group">
-    <label for="dob">date of birth:</label>
-    {{form.dob(class="form-control form-control-lg",type="date")}}
-    </div>
-
-    <div class="form-group">
-    <label for="mob">mobile number:</label>
-    {{form.mob(class="form-control form-control-lg",type="text")}}
-    </div>
-
-
-
-
-    <button type="submit" id="button" class="btn btn-success btn-block">Submit</button>
-
-
-  </form>
+ 
 
 </div>
 </div>

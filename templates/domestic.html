@@ -9,7 +9,7 @@
     <title>Places to explore</title>
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Features-Boxed.css' %}>
+    <link rel="stylesheet" href="{% static 'assets/css/Features-Boxed.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Footer-Basic.css' %}">
 <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Dark.css' %}">
@@ -19,27 +19,33 @@
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 
-<body style="background-color: rgb(221,57,57);">
-    <div class="features-boxed" style="background-color: #d2f4f4;background-image: url(&quot;{% static 'assets/img/1551428022_alleppeyPlaces_feature.png.jpg' %}&quot;);background-size: auto;">
+<body>
+
         <div class="container">
             <div class="intro">
-                <h2 class="text-center" style="filter: blur(0px) contrast(200%);">Domestic</h2>
+                <h2 class="text-center" style="filter: blur(0px) contrast(200%);">DESTINATIONS</h2>
                 <p class="text-center">Incredible India !</p>
             </div>
-            <div class="row justify-content-center features">
-
-               
-               <div class="col-sm-6 col-md-5 col-lg-4 item">
-                {% for i in data %}
-                    <div class="box" style="background-image: url(&quot;{% static '{{i.img.url}}' %}&quot;);background-position: right;background-size: cover;background-repeat: no-repeat;">
-                        
-                        <h3 class="name">{{i.name}}</h3>
-                       
-                        <h3 class="cost">ONLY AT Rs. {{i.cost}}</h3>
-                        <p class="description" style="color: #00ffd1;">{{i.desc}}&nbsp;</p><a class="learn-more" href="book">Travel»</a></div>
-                        {% endfor %} 
-                </div>
             
+            <div class="row justify-content-center features">
+                {% for i in data %}
+                
+                
+               
+                
+                    
+                    <ul img src="{{i.img.url}}" class = "box" >
+                    <a href="/">
+                
+                    <h3 id="title" onclick="$('#title').html(alert('Your request is accepted'));" class ="name">{{i.name}} </h3></a>
+                    <h3 class = "name">{{i.cost}}</h3>
+                    <p class = "description">{{i.desc}}</p>
+                     
+                    </ul>
+                    
+                    
+                    {% endfor %}
+             
 
             </div>
         </div>

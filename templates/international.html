@@ -1,3 +1,5 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html>
 
@@ -5,20 +7,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Bhramanti Tours</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/fonts/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Features-Boxed.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Footer-Basic.css')}}">
-<link rel="stylesheet" href="{{url_for('static',filename='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Login-Form-Dark.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Navigation-with-Button.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Newsletter-Subscription-Form.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/Registration-Form-with-Photo.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Features-Boxed.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-Basic.css' %}">
+<link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Newsletter-Subscription-Form.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 
 <body style="background-color: rgb(221,57,57);">
-    <div class="features-boxed" style="background-color: #d2f4f4;background-image: url(&quot;{{url_for('static',filename='assets/img/1551428022_alleppeyPlaces_feature.png.jpg')}}&quot;);background-size: auto;">
+    <div class="features-boxed" style="background-color: #d2f4f4;background-image: url(&quot;{% static 'assets/img/1551428022_alleppeyPlaces_feature.png.jpg' %}&quot;);background-size: auto;">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center" style="filter: blur(0px) contrast(200%);">International</h2>
@@ -26,51 +28,26 @@
             </div>
             <div class="row justify-content-center features">
 
-            {%for i in data%}    
+            {% for i in data2 %}    
                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box" style="background-image: url(&quot;{{url_for('static',filename=i[0])}}&quot;);background-position: right;background-size: cover;background-repeat: no-repeat;">
-                        <h3 class="name">{{i[1]}}</h3>
-                        <h3 class="name">ONLY AT Rs. {{i[3]}}</h3>
-                        <p class="description" style="color: #00ffd1;">{{i[2]}}&nbsp;</p><a class="learn-more" href="book">Travel»</a></div>
+                    <div class="box" style="background-image: url(&quot;{% static '{{i.img.url}}' %}&quot;);background-position: right;background-size: cover;background-repeat: no-repeat;">
+                        <h3 class="name">{{i.name}}</h3>
+                        <h3 class="name">ONLY AT Rs. {{i.cost}}</h3>
+                        <p class="description" style="color: #00ffd1;">{{i.desc}}&nbsp;</p><a class="learn-more" href="book">Travel»</a></div>
 
                 </div>
-            {%endfor%}
+            {% endfor %}
 
             </div>
         </div>
     </div>
-    <div class="newsletter-subscribe">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">feedback</h2>
-                <p class="text-center">Tell your experience ....</p>
-                <p class="text-center">{{msg}}</p>
-                {% if error %}
-                    <p class="text-center">{{error}}</p>
-                {% endif %}    
-            </div>
-            <form action="International" method="post">
-          {{ form.hidden_tag() }}
-    <div class="form-group">
-      <label for="email">Email id:</label>
-      {{form.email(class="form-control form-control-lg")}}
-    </div>
-    <div class="form-group">
-      <label for="feedback">feedback:</label>
-      {{form.feedback(class="form-control form-control-lg")}}
-    </div>
     
-    <label for="button">Click to submit:</label>
-    <button type="submit" id="button" class="btn btn-success btn-block">Submit</button>
-    
-
-  </form>
             
         </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+    
+    <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'assets/js/bs-init.js'%}"></script>
 </body>
 
 </html>
